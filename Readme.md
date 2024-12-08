@@ -48,7 +48,8 @@ The primary goal of this project is to demonstrate extensibility and maintainabi
 
 1. Clone this repository:
 
-   ```bash git clone <repository_url>
+   ```bash 
+   git clone https://github.com/HunterEwok/SimpleViewer.git
 
 2. Open the solution in Visual Studio or your preferred IDE.
 
@@ -90,20 +91,20 @@ Example Output
 
 The application will render:
 
-• A line connecting specified points with the specified color.
-• A circle at the defined center with the given radius, filled or outlined.
-• A triangle connecting the specified vertices, filled or outlined.
+ï¿½ A line connecting specified points with the specified color.
+ï¿½ A circle at the defined center with the given radius, filled or outlined.
+ï¿½ A triangle connecting the specified vertices, filled or outlined.
 
 Extensibility Plan
 
 The solution is structured to accommodate future requirements:
 
 1. New Shape Types:
-• Introduce a new class implementing a common shape interface (e.g., IShape).
-• Extend the rendering logic to recognize and process the new type.
+ï¿½ Introduce a new class implementing a common shape interface (e.g., IShape).
+ï¿½ Extend the rendering logic to recognize and process the new type.
 2. New Input Formats:
-• Implement additional file parsers (e.g., for XML).
-• Add a format-specific reader class following a strategy pattern.
+ï¿½ Implement additional file parsers (e.g., for XML).
+ï¿½ Add a format-specific reader class following a strategy pattern.
 
 License
 
