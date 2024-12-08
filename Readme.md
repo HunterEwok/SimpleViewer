@@ -59,6 +59,7 @@ Usage
 
 1. Prepare a JSON file with shape definitions. Example:
 
+```json
 [
   {
     "type": "line",
@@ -91,20 +92,20 @@ Example Output
 
 The application will render:
 
-� A line connecting specified points with the specified color.
-� A circle at the defined center with the given radius, filled or outlined.
-� A triangle connecting the specified vertices, filled or outlined.
+** A line connecting specified points with the specified color.
+** A circle at the defined center with the given radius, filled or outlined.
+** A triangle connecting the specified vertices, filled or outlined.
 
 Extensibility Plan
 
 The solution is structured to accommodate future requirements:
 
 1. New Shape Types:
-� Introduce a new class implementing a common shape interface (e.g., IShape).
-� Extend the rendering logic to recognize and process the new type.
+* Introduce a new class implementing a common shape interface (e.g., IShape).
+* Extend the rendering logic to recognize and process the new type.
 2. New Input Formats:
-� Implement additional file parsers (e.g., for XML).
-� Add a format-specific reader class following a strategy pattern.
+* Implement additional file parsers (e.g., for XML).
+* Add a format-specific reader class following a strategy pattern.
 
 License
 
