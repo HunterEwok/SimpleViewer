@@ -93,9 +93,9 @@ Example Output
 
 The application will render:
 
-** A line connecting specified points with the specified color.
-** A circle at the defined center with the given radius, filled or outlined.
-** A triangle connecting the specified vertices, filled or outlined.
+* A line connecting specified points with the specified color.
+* A circle at the defined center with the given radius, filled or outlined.
+* A triangle connecting the specified vertices, filled or outlined.
 
 Extensibility Plan
 
