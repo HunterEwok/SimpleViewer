@@ -2,7 +2,6 @@
 using System.Windows.Input;
 using System.Windows.Media;
 using Viewer.DataLoaders;
-using Viewer.Shapes;
 
 namespace Viewer
 {
@@ -19,7 +18,7 @@ namespace Viewer
 
         private TranslateTransform _translateTransform = new(); // Transformation for panning
 
-        private IDataLoader _dataLoader = new JSONLoader();
+        private List<IShape> _shapesList;
 
         public MainWindow()
         {
@@ -68,13 +67,18 @@ namespace Viewer
         // Event triggered when the window is fully opened
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            DrawShapes(_dataLoader.LoadShapes(InputFilePath));
+            IDataLoader _dataLoader = new JSONLoader();
+            _shapesList = _dataLoader.LoadShapes(InputFilePath);
+
+            if (_shapesList != null && _shapesList.Count != 0)
+                DrawShapes(_shapesList);
         }
 
         // Event triggered when the window is resized
         private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            DrawShapes(_dataLoader.LoadShapes(InputFilePath));
+            if (_shapesList != null && _shapesList.Count != 0)
+                DrawShapes(_shapesList);
         }
 
         // Handles mouse wheel events for zooming in and out
@@ -84,7 +88,8 @@ namespace Viewer
 
             _currentScale *= zoomFactor;
 
-            DrawShapes(_dataLoader.LoadShapes(InputFilePath));
+            if (_shapesList != null && _shapesList.Count != 0)
+                DrawShapes(_shapesList);
         }
 
         // Handles mouse button press for starting a drag operation

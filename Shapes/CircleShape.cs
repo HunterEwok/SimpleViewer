@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows;
@@ -11,7 +6,6 @@ using System.Windows;
 namespace Viewer.Shapes
 {
     // Circle shape implementation
-
     internal class CircleShape : IShape
     {
         private Point Center { get; }
@@ -34,13 +28,9 @@ namespace Viewer.Shapes
                 Width = Radius * 2 * scale,
                 Height = Radius * 2 * scale,
                 Stroke = new SolidColorBrush(Color),
-                StrokeThickness = 1
+                StrokeThickness = 1,
+                Fill = IsFilled ? new SolidColorBrush(Color) : Brushes.Transparent
             };
-
-            if (IsFilled)
-            {
-                ellipse.Fill = new SolidColorBrush(Color);
-            }
 
             Canvas.SetLeft(ellipse, (Center.X - Radius) * scale + centerX);
             Canvas.SetTop(ellipse, (Center.Y - Radius) * scale + centerY);
