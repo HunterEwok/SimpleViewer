@@ -83,6 +83,7 @@ Usage
     "color": "127; 255; 0; 255"
   }
 ]
+```
 
 2. Run the application.
 3. Load the JSON file into the viewer.
